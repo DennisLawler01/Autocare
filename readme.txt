@@ -1,1 +1,3 @@
-Health & Fitness tracker
+Autocare is a web application designed to help users manager their vehicles by logging maintenance tasks, calculating expenses such as fuel. repairs, insurance. 
+The project has a simple UI that allows users to register their vehicles along with their milage to help them better understand routine maintenance schedules for
+their specific vehicle. Additionally, AutoCare provides dedicated sections for logging various maintenance tasks, from fluids to consumables, with each task having its own form and functionality for easy tracking and management. Built using HTML, CSS, and JavaScript, AutoCare is both user-friendly and easily customizable, making it suitable for a wide range of automotive maintenance needs. Whether you are an individual looking to keep track of your personal vehicles or a professional managing multiple assets, AutoCare offers a straightforward, effective solution for vehicle maintenance management.
