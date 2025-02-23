@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoCare - Maintenance Tasks</title>
+  <link rel="stylesheet" href="src/assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("nav-placeholder").innerHTML = data);
+  </script>
+
+  <!-- Basic Maintenance Section -->
+  <section id="basic-maintenance">
+    <h2>Basic Maintenance</h2>
+    <form id="initial-break-in-form">
+      <label for="initial-break-in">Initial Break-In</label>
+      <input type="hidden" name="task" value="Initial Break-In" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="oil-filter-form">
+      <label for="oil-filter">Oil &amp; Filter Change</label>
+      <input type="hidden" name="task" value="Oil & Filter Change" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="tire-rotation-form">
+      <label for="tire-rotation">Tire Rotation</label>
+      <input type="hidden" name="task" value="Tire Rotation" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="fluid-checks-form">
+      <label for="fluid-checks">Fluid Checks</label>
+      <input type="hidden" name="task" value="Fluid Checks" />
+      <button type="submit">Log</button>
+    </form>
+  </section>
+
+  <!-- Filters & Fluids Section -->
+  <section id="filters-fluids">
+    <h2>Filters &amp; Fluids</h2>
+    <form id="engine-air-filter-form">
+      <label for="engine-air-filter">Engine Air Filter Replacement</label>
+      <input type="hidden" name="task" value="Air Filter Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="cabin-air-filter-form">
+      <label for="cabin-air-filter">Cabin Air Filter Replacement</label>
+      <input type="hidden" name="task" value="Cabin Air Filter Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="fuel-filter-form">
+      <label for="fuel-filter">Fuel Filter Replacement</label>
+      <input type="hidden" name="task" value="Fuel Filter Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="transmission-fluid-form">
+      <label for="transmission-fluid">Transmission Fluid Change</label>
+      <input type="hidden" name="task" value="Transmission Fluid Change" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="coolant-flush-form">
+      <label for="coolant-flush">Coolant Flush &amp; Replacement</label>
+      <input type="hidden" name="task" value="Coolant Flush & Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="brake-fluid-form">
+      <label for="brake-fluid">Brake Fluid Flush</label>
+      <input type="hidden" name="task" value="Brake Fluid Flush" />
+      <button type="submit">Log</button>
+    </form>
+  </section>
+
+  <!-- Engine & Electrical Section -->
+  <section id="engine-electrical">
+    <h2>Engine &amp; Electrical</h2>
+    <form id="spark-plug-form">
+      <label for="spark-plug">Spark Plug Replacement</label>
+      <input type="hidden" name="task" value="Spark Plug Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="battery-check-form">
+      <label for="battery-check">Battery Check</label>
+      <input type="hidden" name="task" value="Battery Check" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="battery-replacement-form">
+      <label for="battery-replacement">Battery Replacement</label>
+      <input type="hidden" name="task" value="Battery Replacement" />
+      <button type="submit">Log</button>
+    </form>
+  </section>
+
+  <!-- Belts & Hoses Section -->
+  <section id="belts-hoses">
+    <h2>Belts &amp; Hoses</h2>
+    <form id="belts-hoses-inspection-form">
+      <label for="belts-hoses-inspection">Belts &amp; Hoses Inspection</label>
+      <input type="hidden" name="task" value="Belts & Hoses Inspection" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="timing-belt-form">
+      <label for="timing-belt">Timing Belt Replacement</label>
+      <input type="hidden" name="task" value="Timing Belt Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="water-pump-form">
+      <label for="water-pump">Water Pump Replacement</label>
+      <input type="hidden" name="task" value="Water Pump Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="serpentine-belt-form">
+      <label for="serpentine-belt">Serpentine Belt Replacement</label>
+      <input type="hidden" name="task" value="Serpentine Belt Replacement" />
+      <button type="submit">Log</button>
+    </form>
+  </section>
+
+  <!-- Brakes & Suspension Section -->
+  <section id="brakes-suspension">
+    <h2>Brakes &amp; Suspension</h2>
+    <form id="brake-inspection-form">
+      <label for="brake-inspection">Brake Inspection</label>
+      <input type="hidden" name="task" value="Brake Inspection" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="brake-pads-form">
+      <label for="brake-pads">Brake Pads &amp; Rotors</label>
+      <input type="hidden" name="task" value="Brake Pads & Rotors" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="suspension-form">
+      <label for="suspension">Suspension &amp; Steering Components</label>
+      <input type="hidden" name="task" value="Suspension & Steering Components" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="wheel-alignment-form">
+      <label for="wheel-alignment">Wheel Alignment &amp; Balancing</label>
+      <input type="hidden" name="task" value="Wheel Alignment & Balancing" />
+      <button type="submit">Log</button>
+    </form>
+    <!-- Additional link for more brakes details -->
+    <p>
+      <a href="brakes.html">More on Brakes</a>
+    </p>
+  </section>
+
+  <!-- Other Maintenance Section -->
+  <section id="other-maintenance">
+    <h2>Other Maintenance</h2>
+    <form id="pcv-valve-form">
+      <label for="pcv-valve">PCV Valve Replacement</label>
+      <input type="hidden" name="task" value="PCV Valve Replacement" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="differential-fluid-form">
+      <label for="differential-fluid">Differential/Transfer Case Fluid Change</label>
+      <input type="hidden" name="task" value="Differential/Transfer Case Fluid Change" />
+      <button type="submit">Log</button>
+    </form>
+    <form id="wiper-blades-form">
+      <label for="wiper-blades">Wiper Blades</label>
+      <input type="hidden" name="task" value="Wiper Blades" />
+      <button type="submit">Log</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoCare - Vehicles</title>
+  <link rel="stylesheet" href="src/assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Load Navigation Bar -->
+  <div id="nav-placeholder"></div>
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("nav-placeholder").innerHTML = data);
+  </script>
+
+  <label for="make">Make:</label>
+  <select id="make" required></select>
+
+  <label for="model">Model:</label>
+  <select id="model" required>
+    <option value="">Select a Make First</option>
+  </select>
+
+  <button id="add-vehicle-button" type="button">Add Vehicle</button>
+
+  <!-- My Vehicles List -->
+  <h3>My Vehicles:</h3>
+  <ul id="vehicle-list"></ul>
+
+  <script src="src\assets\js\vehicle.js"></script>
+</body>
+</html>

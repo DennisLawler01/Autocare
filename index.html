@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AutoCare - Home</title>
+        <!-- Example if your final CSS is located at src/assets/css/style.css -->
+        <link rel="stylesheet" href="src/assets/css/style.css" />
+      </head>
+      
+<body>
+
+  <!-- Navigation Bar -->
+  <!-- Use a <nav> tag for semantic HTML -->
+  <nav id="nav-placeholder"></nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h2>Welcome to AutoCare</h2>
+      <p>Track your vehicle's fuel stops, maintenance, and expenses in one place.</p>
+      <a href="vehicles.html" class="btn">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Optionally, add a main tag for your main content -->
+  <!--
+  <main>
+    <p>Your main content goes here...</p>
+  </main>
+  -->
+
+  <!-- Footer -->
+  <!--
+  <footer>
+    <p>&copy; 2025 AutoCare</p>
+  </footer>
+  -->
+
+  <!-- Script to fetch your nav.html -->
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+</html>

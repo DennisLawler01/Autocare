@@ -1,0 +1,19 @@
+{
+  "name": "autocare",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",  
+    "build": "vite build",
+    "preview": "vite preview",
+    "build-sass": "sass --watch src/assets/scss/style.scss src/assets/css/style.css --load-path=node_modules"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.85.0",
+    "vite": "^6.1.0"
+  }
+}
