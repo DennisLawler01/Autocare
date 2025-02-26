@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Car makes and their models
+    // Car makes and models
     const carData = {
       "Acura": ["ILX", "MDX", "NSX", "RDX", "TLX"],
       "Alfa": ["Giulia", "Stelvio", "4C Spider"],
@@ -38,7 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
       "Volkswagen": ["Atlas", "Golf", "Jetta", "Passat", "Tiguan"],
       "Volvo": ["S60", "S90", "V60", "XC40", "XC60", "XC90"]
     };
-  
+  //Selecting vehicle model year
+  const yearSelect = document.getElementById("year");
+    for (let year = 2025; year >= 1996; year--) {
+      const option = document.createElement("option");
+      option.value = year;
+      option.textContent = year;
+      yearSelect.appendChild(option);
+}
+
     const makeSelect = document.getElementById("make");
     const modelSelect = document.getElementById("model");
     const addVehicleButton = document.getElementById("add-vehicle-button");
@@ -61,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Populate models when a make is selected
     makeSelect.addEventListener("change", function() {
       const selectedMake = makeSelect.value;
-      modelSelect.innerHTML = ""; // Clear existing
+      modelSelect.innerHTML = ""; // Clear
   
       if (selectedMake) {
         carData[selectedMake].forEach(model => {
@@ -75,57 +83,61 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   
-    // In-memory storage for vehicles
-    let vehicles = [];
-    const storedVehicles = localStorage.getItem("vehicles");
-    if (storedVehicles) {
-      vehicles = JSON.parse(storedVehicles);
-    }
-  
-    // Update the "My Vehicles" list
-    function updateVehicleList() {
-      vehicleList.innerHTML = "";
-      vehicles.forEach((vehicle, index) => {
-        const li = document.createElement("li");
-        li.textContent = `${vehicle.make} ${vehicle.model} (Added: ${new Date(vehicle.added).toLocaleDateString()}) `;
-  
-        //Remove Button
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remove";
-        removeBtn.addEventListener("click", () => {
-          vehicles.splice(index, 1);
-          localStorage.setItem("vehicles", JSON.stringify(vehicles));
-          updateVehicleList();
-        });
-  
-        li.appendChild(removeBtn);
-        vehicleList.appendChild(li);
-      });
-    }
-  
-    updateVehicleList();
-  
-    // "Add Vehicle" button
-    addVehicleButton.addEventListener("click", function() {
-      const selectedMake = makeSelect.value;
-      const selectedModel = modelSelect.value;
-  
-      if (!selectedMake || !selectedModel) {
-        alert("Please select both a make and model.");
-        return;
-      }
-  
-      const vehicle = {
-        make: selectedMake,
-        model: selectedModel,
-        added: new Date().toISOString()
-      };
-  
-      vehicles.push(vehicle);
+// In memory storage for vehicles
+let vehicles = [];
+const storedVehicles = localStorage.getItem("vehicles");
+if (storedVehicles) {
+  vehicles = JSON.parse(storedVehicles);
+}
+
+// Update the My Vehicles list
+function updateVehicleList() {
+  vehicleList.innerHTML = "";
+  vehicles.forEach((vehicle, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${vehicle.year} ${vehicle.make} ${vehicle.model} (${vehicle.trim}) (Added: ${new Date(vehicle.added).toLocaleDateString()}) `;
+    
+    // Remove Button
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.addEventListener("click", () => {
+      vehicles.splice(index, 1);
       localStorage.setItem("vehicles", JSON.stringify(vehicles));
       updateVehicleList();
-  
-      alert(`Vehicle added: ${selectedMake} ${selectedModel}`);
     });
+
+    li.appendChild(removeBtn);
+    vehicleList.appendChild(li);
   });
-  
+}
+
+updateVehicleList();
+
+// Add Vehicle button event handler
+addVehicleButton.addEventListener("click", function() {
+  const selectedMake = makeSelect.value;
+  const selectedModel = modelSelect.value;
+  const selectedYear = document.getElementById("year").value;
+  const selectedTrim = document.getElementById("trim").value;
+
+  if (!selectedMake || !selectedModel || !selectedYear || !selectedTrim) {
+    alert("Please select a make, model, year, and trim.");
+    return;
+  }
+
+  const vehicle = {
+    make: selectedMake,
+    model: selectedModel,
+    year: selectedYear,
+    trim: selectedTrim,
+    added: new Date().toISOString()
+  };
+
+  vehicles.push(vehicle);
+  localStorage.setItem("vehicles", JSON.stringify(vehicles));
+  updateVehicleList();
+
+  alert(`Vehicle added: ${selectedYear} ${selectedMake} ${selectedModel} (${selectedTrim})`);
+});
+
+  });

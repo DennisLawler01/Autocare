@@ -1,25 +1,50 @@
 @use 'variables';
 
 body {
-  background-color: variables.$background-color;
-  color: #333;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero {
-  background: variables.$primary-color;
-  color: variables.$text-color;
-  padding: 4rem 2rem;
+nav {
+  width: 100%;
+  padding: 1rem;
   text-align: center;
 }
 
+.hero {
+  background: #007BFF;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+
 .btn {
-  background-color: variables.$text-color;
-  color: variables.$primary-color;
+  background-color: #fff;
+  color: #007BFF;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.2s ease;
+  border: 2px solid #007BFF;
+  margin-top: 1rem;
 }
 
 .btn:hover {
