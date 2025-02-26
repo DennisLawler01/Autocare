@@ -8,17 +8,29 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Placeholder for Navbar -->
   <div id="nav-placeholder"></div>
+
+  <!-- Navbar Loads -->
   <script>
-    fetch("nav.html")
-      .then(response => response.text())
-      .then(data => document.getElementById("nav-placeholder").innerHTML = data);
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("nav.html")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Failed to load navbar");
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    });
   </script>
 
   <!-- Basic Maintenance Section -->
   <section id="basic-maintenance">
-    <h2>Basic Maintenance</h2>
+    <h2>🔧Basic Maintenance</h2>
     <form id="initial-break-in-form">
       <label for="initial-break-in">Initial Break-In</label>
       <input type="hidden" name="task" value="Initial Break-In" />
@@ -43,7 +55,7 @@
 
   <!-- Filters & Fluids Section -->
   <section id="filters-fluids">
-    <h2>Filters &amp; Fluids</h2>
+    <h2>🛢️Filters &amp; Fluids</h2>
     <form id="engine-air-filter-form">
       <label for="engine-air-filter">Engine Air Filter Replacement</label>
       <input type="hidden" name="task" value="Air Filter Replacement" />
@@ -78,7 +90,7 @@
 
   <!-- Engine & Electrical Section -->
   <section id="engine-electrical">
-    <h2>Engine &amp; Electrical</h2>
+    <h2>⚡Engine &amp; Electrical</h2>
     <form id="spark-plug-form">
       <label for="spark-plug">Spark Plug Replacement</label>
       <input type="hidden" name="task" value="Spark Plug Replacement" />
@@ -98,7 +110,7 @@
 
   <!-- Belts & Hoses Section -->
   <section id="belts-hoses">
-    <h2>Belts &amp; Hoses</h2>
+    <h2>🔎Belts &amp; Hoses</h2>
     <form id="belts-hoses-inspection-form">
       <label for="belts-hoses-inspection">Belts &amp; Hoses Inspection</label>
       <input type="hidden" name="task" value="Belts & Hoses Inspection" />
