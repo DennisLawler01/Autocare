@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Car makes and models
     const carData = {
-      "Acura": ["ILX", "MDX", "NSX", "RDX", "TLX"],
+      "Acura": ["ADX", "CL", "Integra", "ILX", "MDX", "NSX", "RDX", "RL", "TL", "TLX", "ZDX"],
       "Alfa": ["Giulia", "Stelvio", "4C Spider"],
       "Audi": ["A3", "A4", "A5", "A6", "A7", "Q3", "Q5", "Q7", "R8"],
       "Bentley": ["Bentayga", "Continental GT", "Flying Spur"],
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "RAM": ["1500", "2500", "3500", "ProMaster"],
       "Subaru": ["Ascent", "Forester", "Impreza", "Outback", "WRX"],
       "Tesla": ["Model 3", "Model S", "Model X", "Model Y"],
-      "Toyota": ["4Runner", "Camry", "Corolla", "Highlander", "Tacoma", "Tundra"],
+      "Toyota": ["4Runner","Avalon", "Camry", "Corolla", "GR 86", "GR Corolla", "GT86",  "Highlander", "Hilux", "Prius", "RAV4", "Sequoia", "Sienna", "Tacoma", "Tundra", "Venza", "Yaris"],
       "Volkswagen": ["Atlas", "Golf", "Jetta", "Passat", "Tiguan"],
       "Volvo": ["S60", "S90", "V60", "XC40", "XC60", "XC90"]
     };
