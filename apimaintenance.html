@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCare - Maintenance Log</title>
+  <link rel="stylesheet" href="src/assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Placeholder for Navbar -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Navbar Loads -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("nav.html")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Failed to load navbar");
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    });
+  </script>
+</head>
+<body>
+  <h1>Vehicle Maintenance Lookup</h1>
+  <form id="vehicle-form">
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year" required>
+    <br><br>
+    
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="make" required>
+    <br><br>
+    
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <br><br>
+    
+    <label for="trim">Trim (Optional):</label>
+    <input type="text" id="trim" name="trim">
+    <br><br>
+    
+    <button type="submit">Get Maintenance Info</button>
+  </form>
+
+  <h2>Result:</h2>
+  <pre id="result"></pre>
+
+  <script>
+    document.getElementById('vehicle-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const year = document.getElementById('year').value;
+      const make = document.getElementById('make').value;
+      const model = document.getElementById('model').value;
+      const trim = document.getElementById('trim').value;
+
+      let apiUrl = `http://localhost:3000/vehicle/${year}/${make}/${model}`;
+      if (trim && trim.trim() !== "") {
+        apiUrl += `/${trim}`;
+      }
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('result').innerText = 'Error fetching data: ' + error.message;
+      }
+    });
+  </script>
+</body>
+</html>
