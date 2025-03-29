@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoCare Dashboard</title>
+  <link rel="stylesheet" href="../../src/assets/css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    .vehicle-card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    .vehicle-card h3 {
+      margin-top: 0;
+    }
+    .vehicle-card button {
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <h1>My Vehicles Dashboard</h1>
+
+  <div id="vehicle-container"></div>
+
+  <h2>Add a Vehicle</h2>
+
+  <!-- Vehicle Entry Form -->
+  <label for="year">Year:</label>
+  <select id="year">
+    <option value="">Select a Year</option>
+  </select>
+
+  <label for="make">Make:</label>
+  <select id="make" required></select>
+
+  <label for="model">Model:</label>
+  <select id="model" required>
+    <option value="">Select a Make First</option>
+  </select>
+
+  <label for="trim">Trim:</label>
+  <input id="trim" type="text" placeholder="Enter trim" required />
+
+  <label for="mileage">Mileage:</label>
+  <input id="mileage" type="number" placeholder="e.g., 45000" required />
+
+  <br><br>
+  <button id="add-vehicle-button" type="button">Add Vehicle</button>
+
+  <!-- Main Dashboard Script -->
+  <script>
+    // Load navbar
+    fetch("../nav.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      });
+
+    // Load saved vehicles
+    const vehicleContainer = document.getElementById("vehicle-container");
+    const vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+
+    if (vehicles.length === 0) {
+      vehicleContainer.innerHTML = "<p>No vehicles saved yet.</p>";
+    } else {
+      vehicles.forEach(vehicle => {
+  const card = document.createElement("div");
+  card.className = "vehicle-card";
+
+  card.innerHTML = `
+    <h3>${vehicle.year} ${vehicle.make} ${vehicle.model}</h3>
+    <p><strong>Trim:</strong> ${vehicle.trim}</p>
+    <p><strong>Mileage:</strong> ${vehicle.mileage} miles</p>
+    <button onclick='goToMaintenance(${JSON.stringify(vehicle)})'>🔧 Scheduled Maintenance</button>
+    <button onclick='goToFuel(${JSON.stringify(vehicle)})'>⛽ Fuel Log</button>`;
+
+  vehicleContainer.appendChild(card);
+    });
+    }
+
+    function goToMaintenance(vehicle) {
+      const query = new URLSearchParams(vehicle).toString();
+      window.location.href = `../maintenance/maintenance-db.html?${query}`;
+    }
+
+    function goToFuel(vehicle) {
+      const query = new URLSearchParams(vehicle).toString();
+      window.location.href = `../fuel/fuel.html?${query}`;
+    }
+  </script>
+
+  <!-- Vehicle Dropdown Loader Script -->
+  <script src="../../src/assets/js/vehicle.js"></script>
+
+</body>
+</html>

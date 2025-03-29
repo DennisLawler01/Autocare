@@ -1,143 +1,164 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Car makes and models
-    const carData = {
-      "Acura": ["ADX", "CL", "Integra", "ILX", "MDX", "NSX", "RDX", "RL", "TL", "TLX", "ZDX"],
-      "Alfa": ["Giulia", "Stelvio", "4C Spider"],
-      "Audi": ["A3", "A4", "A5", "A6", "A7", "Q3", "Q5", "Q7", "R8"],
-      "Bentley": ["Bentayga", "Continental GT", "Flying Spur"],
-      "BMW": ["1 Series", "3 Series", "5 Series", "7 Series", "X3", "X5", "Z4"],
-      "Buick": ["Enclave", "Encore", "Envision", "Regal", "LaCrosse"],
-      "Cadillac": ["CT4", "CT5", "Escalade", "XT4", "XT5", "XT6"],
-      "Chevrolet": ["Bolt", "Camaro", "Corvette", "Equinox", "Silverado", "Tahoe"],
-      "Chrysler": ["300", "Pacifica", "Voyager"],
-      "Dodge": ["Charger", "Challenger", "Durango", "Journey"],
-      "Fiat": ["500", "500X", "Spider 124"],
-      "Ford": ["Bronco", "Edge", "Escape", "Explorer", "F-150", "Mustang"],
-      "Genesis": ["G70", "G80", "G90"],
-      "GMC": ["Acadia", "Canyon", "Sierra", "Terrain", "Yukon"],
-      "Honda": ["Accord", "Civic", "CR-V", "Pilot", "Ridgeline"],
-      "Hyundai": ["Elantra", "Kona", "Santa Fe", "Sonata", "Tucson"],
-      "Infiniti": ["Q50", "Q60", "QX50", "QX60", "QX80"],
-      "Jaguar": ["E-PACE", "F-PACE", "F-TYPE", "XE", "XF"],
-      "Jeep": ["Cherokee", "Compass", "Gladiator", "Grand Cherokee", "Wrangler"],
-      "Kia": ["Forte", "Optima", "Sorento", "Soul", "Sportage"],
-      "Land Rover": ["Defender", "Discovery", "Range Rover", "Velar"],
-      "Lexus": ["ES", "GX", "IS", "LX", "NX", "RX", "UX"],
-      "Lincoln": ["Aviator", "Corsair", "Nautilus", "Navigator"],
-      "Maserati": ["Ghibli", "Levante", "Quattroporte"],
-      "Mazda": ["CX-3", "CX-5", "CX-9", "MX-5 Miata"],
-      "Mercedes Benz": ["A-Class", "C-Class", "E-Class", "GLC", "GLE", "S-Class"],
-      "Mini": ["Clubman", "Countryman", "Hardtop"],
-      "Mitsubishi": ["Eclipse Cross", "Mirage", "Outlander"],
-      "Nissan": ["Altima", "Frontier", "Maxima", "Rogue", "Titan"],
-      "Porsche": ["911", "Cayenne", "Macan", "Panamera"],
-      "RAM": ["1500", "2500", "3500", "ProMaster"],
-      "Subaru": ["Ascent", "Forester", "Impreza", "Outback", "WRX"],
-      "Tesla": ["Model 3", "Model S", "Model X", "Model Y"],
-      "Toyota": ["4Runner","Avalon", "Camry", "Corolla", "GR 86", "GR Corolla", "GT86",  "Highlander", "Hilux", "Prius", "RAV4", "Sequoia", "Sienna", "Tacoma", "Tundra", "Venza", "Yaris"],
-      "Volkswagen": ["Atlas", "Golf", "Jetta", "Passat", "Tiguan"],
-      "Volvo": ["S60", "S90", "V60", "XC40", "XC60", "XC90"]
-    };
-  //Selecting vehicle model year
+document.addEventListener("DOMContentLoaded", function () {
   const yearSelect = document.getElementById("year");
-    for (let year = 2025; year >= 1996; year--) {
+  const makeSelect = document.getElementById("make");
+  const modelSelect = document.getElementById("model");
+  const trimInput = document.getElementById("trim");
+  const mileageInput = document.getElementById("mileage");
+  const addVehicleBtn = document.getElementById("add-vehicle-button");
+  const vehicleContainer = document.getElementById("vehicle-container");
+
+  let vehicleData = {};
+  let vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+
+  // Load JSON
+  fetch("../../YearsMakesModels.json")
+    .then(response => response.json())
+    .then(data => {
+      vehicleData = data;
+      populateYears();
+    })
+    .catch(error => console.error("Failed to load vehicle data:", error));
+
+  function populateYears() {
+    const years = Object.keys(vehicleData).sort();
+    years.forEach(year => {
       const option = document.createElement("option");
       option.value = year;
       option.textContent = year;
       yearSelect.appendChild(option);
-}
-
-    const makeSelect = document.getElementById("make");
-    const modelSelect = document.getElementById("model");
-    const addVehicleButton = document.getElementById("add-vehicle-button");
-    const vehicleList = document.getElementById("vehicle-list");
-  
-    // Add default option dropdown
-    const defaultMakeOption = document.createElement("option");
-    defaultMakeOption.value = "";
-    defaultMakeOption.textContent = "Select a make";
-    makeSelect.appendChild(defaultMakeOption);
-  
-    // Populate the make dropdown with car makes
-    Object.keys(carData).forEach(make => {
-      let option = document.createElement("option");
-      option.value = make;
-      option.textContent = make;
-      makeSelect.appendChild(option);
     });
-  
-    // Populate models when a make is selected
-    makeSelect.addEventListener("change", function() {
-      const selectedMake = makeSelect.value;
-      modelSelect.innerHTML = ""; // Clear
-  
-      if (selectedMake) {
-        carData[selectedMake].forEach(model => {
-          let option = document.createElement("option");
-          option.value = model;
-          option.textContent = model;
-          modelSelect.appendChild(option);
-        });
-      } else {
-        modelSelect.innerHTML = `<option value="">Select a Make First</option>`;
-      }
-    });
-  
-// In memory storage for vehicles
-let vehicles = [];
-const storedVehicles = localStorage.getItem("vehicles");
-if (storedVehicles) {
-  vehicles = JSON.parse(storedVehicles);
-}
-
-// Update the My Vehicles list
-function updateVehicleList() {
-  vehicleList.innerHTML = "";
-  vehicles.forEach((vehicle, index) => {
-    const li = document.createElement("li");
-    li.textContent = `${vehicle.year} ${vehicle.make} ${vehicle.model} (${vehicle.trim}) (Added: ${new Date(vehicle.added).toLocaleDateString()}) `;
-    
-    // Remove Button
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.addEventListener("click", () => {
-      vehicles.splice(index, 1);
-      localStorage.setItem("vehicles", JSON.stringify(vehicles));
-      updateVehicleList();
-    });
-
-    li.appendChild(removeBtn);
-    vehicleList.appendChild(li);
-  });
-}
-
-updateVehicleList();
-
-// Add Vehicle button event handler
-addVehicleButton.addEventListener("click", function() {
-  const selectedMake = makeSelect.value;
-  const selectedModel = modelSelect.value;
-  const selectedYear = document.getElementById("year").value;
-  const selectedTrim = document.getElementById("trim").value;
-
-  if (!selectedMake || !selectedModel || !selectedYear || !selectedTrim) {
-    alert("Please select a make, model, year, and trim.");
-    return;
   }
 
-  const vehicle = {
-    make: selectedMake,
-    model: selectedModel,
-    year: selectedYear,
-    trim: selectedTrim,
-    added: new Date().toISOString()
-  };
+  addVehicleBtn.addEventListener("click", () => {
+    const year = yearSelect.value;
+    const make = makeSelect.value;
+    const model = modelSelect.value;
+    const trim = trimInput.value.trim();
+    const mileage = mileageInput.value.trim();
 
-  vehicles.push(vehicle);
-  localStorage.setItem("vehicles", JSON.stringify(vehicles));
-  updateVehicleList();
+    if (!year || !make || !model || !trim || !mileage) {
+      alert("Please fill out all vehicle details.");
+      return;
+    }
 
-  alert(`Vehicle added: ${selectedYear} ${selectedMake} ${selectedModel} (${selectedTrim})`);
-});
+    const timestamp = new Date().toLocaleString();
+    const newVehicle = { year, make, model, trim, mileage, timestamp };
 
+    vehicles.push(newVehicle);
+    localStorage.setItem("vehicles", JSON.stringify(vehicles));
+
+    location.reload();
+
+    yearSelect.value = "";
+    makeSelect.innerHTML = "";
+    modelSelect.innerHTML = '<option value="">Select a Make First</option>';
+    trimInput.value = "";
+    mileageInput.value = "";
+    makeSelect.disabled = true;
+    modelSelect.disabled = true;
   });
+
+  makeSelect.disabled = true;
+  modelSelect.disabled = true;
+
+  yearSelect.addEventListener("change", () => {
+    const selectedYear = yearSelect.value;
+    makeSelect.innerHTML = '<option value="">Select Make</option>';
+    modelSelect.innerHTML = '<option value="">Select Model</option>';
+    makeSelect.disabled = true;
+    modelSelect.disabled = true;
+
+    if (selectedYear && vehicleData[selectedYear]) {
+      const makes = Object.keys(vehicleData[selectedYear]);
+      makes.forEach(make => {
+        const option = document.createElement("option");
+        option.value = make;
+        option.textContent = make;
+        makeSelect.appendChild(option);
+      });
+      makeSelect.disabled = false;
+    }
+  });
+
+  makeSelect.addEventListener("change", () => {
+    const selectedYear = yearSelect.value;
+    const selectedMake = makeSelect.value;
+    modelSelect.innerHTML = '<option value="">Select Model</option>';
+    modelSelect.disabled = true;
+
+    if (selectedYear && selectedMake) {
+      const models = vehicleData[selectedYear][selectedMake];
+      models.forEach(model => {
+        const option = document.createElement("option");
+        option.value = model;
+        option.textContent = model;
+        modelSelect.appendChild(option);
+      });
+      modelSelect.disabled = false;
+    }
+  });
+
+  function renderVehicles() {
+    vehicleContainer.innerHTML = "";
+    vehicles.forEach((vehicle, index) => {
+      const card = document.createElement("div");
+      card.className = "vehicle-card";
+
+      card.innerHTML = `
+        <h3>${vehicle.year} ${vehicle.make} ${vehicle.model}</h3>
+        <p><strong>Trim:</strong> ${vehicle.trim}</p>
+        <label for="mileage-${index}"><strong>Mileage:</strong></label>
+        <input type="number" id="mileage-${index}" value="${vehicle.mileage}" disabled />
+        <button class="maint-btn">🔧 Maintenance</button>
+        <button class="fuel-btn">⛽ Fuel Log</button>
+        <button class="edit-btn">✏️ Edit</button>
+        <button class="remove-btn" style="background-color: #f44336; color: white;">🗑️ Remove</button>
+      `;
+
+      const mileageInput = card.querySelector(`#mileage-${index}`);
+      const editBtn = card.querySelector(".edit-btn");
+
+      editBtn.addEventListener("click", () => {
+        if (editBtn.textContent.includes("Edit")) {
+          mileageInput.disabled = false;
+          mileageInput.focus();
+          editBtn.textContent = "💾 Save";
+        } else {
+          const newMileage = parseInt(mileageInput.value);
+          if (isNaN(newMileage) || newMileage < 0) {
+            alert("Please enter a valid mileage.");
+            return;
+          }
+          vehicles[index].mileage = newMileage;
+          localStorage.setItem("vehicles", JSON.stringify(vehicles));
+          mileageInput.disabled = true;
+          editBtn.textContent = "✏️ Edit";
+        }
+      });
+
+      card.querySelector(".maint-btn").addEventListener("click", () => goToMaintenance(vehicles[index]));
+      card.querySelector(".fuel-btn").addEventListener("click", () => goToFuel(vehicles[index]));
+      card.querySelector(".remove-btn").addEventListener("click", () => {
+        if (confirm("Are you sure you want to remove this vehicle?")) {
+          vehicles.splice(index, 1);
+          localStorage.setItem("vehicles", JSON.stringify(vehicles));
+          renderVehicles();
+        }
+      });
+
+      vehicleContainer.appendChild(card);
+    });
+  }
+
+  function goToMaintenance(vehicle) {
+    const query = new URLSearchParams(vehicle).toString();
+    window.location.href = `../maintenance/maintenance-db.html?${query}`;
+  }
+
+  function goToFuel(vehicle) {
+    const query = new URLSearchParams(vehicle).toString();
+    window.location.href = `../fuel/fuel.html?${query}`;
+  }
+
+  if (vehicleContainer) renderVehicles();
+});

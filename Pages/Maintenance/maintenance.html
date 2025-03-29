@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoCare - Maintenance Tasks</title>
+  <link rel="stylesheet" href="../../src/assets/css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    select, button {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      width: 220px;
+    }
+    button:disabled {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Placeholder -->
+  <div id="nav-placeholder"></div>
+
+  <h1>Log Maintenance</h1>
+
+  <label for="vehicle-select">My Vehicles:</label><br />
+  <select id="vehicle-select">
+    <option value="">Select a Vehicle</option>
+  </select>
+
+  <br />
+  <button id="go-button" disabled>Go</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load Navbar
+      fetch("../nav.html")
+        .then(response => {
+          if (!response.ok) throw new Error("Failed to load navbar");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+  
+      const vehicleSelect = document.getElementById("vehicle-select");
+      const goButton = document.getElementById("go-button");
+  
+      const vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+  
+      // Populate dropdown with mileage included
+      vehicles.forEach((vehicle, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = `${vehicle.year} ${vehicle.make} ${vehicle.model} (${vehicle.trim}) - ${vehicle.mileage} miles`;
+        vehicleSelect.appendChild(option);
+      });
+  
+      vehicleSelect.addEventListener("change", () => {
+        goButton.disabled = vehicleSelect.value === "";
+      });
+  
+      goButton.addEventListener("click", () => {
+        const selectedIndex = vehicleSelect.value;
+        if (selectedIndex === "") return;
+  
+        const vehicle = vehicles[selectedIndex];
+  
+        const query = new URLSearchParams({
+          year: vehicle.year,
+          make: vehicle.make,
+          model: vehicle.model,
+          trim: vehicle.trim,
+          mileage: vehicle.mileage
+        }).toString();
+  
+        // ✅ Redirect to new page with vehicle info in query string
+        window.location.href = `my-vehicles-mt.html?${query}`;
+      });
+    });
+  </script>
+  

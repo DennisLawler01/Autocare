@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Vehicle Maintenance Tasks</title>
+  <link rel="stylesheet" href="../../src/assets/css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    .info-box {
+      background: #f4f4f4;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    details {
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0.5rem;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .due-indicator {
+      font-size: 1.1rem;
+      margin-left: 0.5rem;
+      color: orange;
+    }
+    select {
+      padding: 0.4rem;
+      margin-bottom: 1rem;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Placeholder -->
+  <div id="nav-placeholder"></div>
+
+  <h1>Maintenance Schedule</h1>
+
+  <div class="info-box" id="vehicle-info"></div>
+
+  <label for="global-condition"><strong>Select your vehicle's driving condition:</strong></label><br />
+  <select id="global-condition">
+    <option value="normal">Normal</option>
+    <option value="severe">Severe</option>
+  </select>
+
+  <div id="accordion-container"></div>
+
+  <script>
+    // Load Navbar
+    fetch("../nav.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      });
+
+    // Get vehicle info from query params
+    const params = new URLSearchParams(window.location.search);
+    const year = params.get("year");
+    const make = params.get("make");
+    const model = params.get("model");
+    const trim = params.get("trim");
+    const mileage = params.get("mileage");
+
+    const vehicleInfoDiv = document.getElementById("vehicle-info");
+    if (year && make && model && trim && mileage) {
+      vehicleInfoDiv.innerHTML = `
+        <strong>${year} ${make} ${model} (${trim})</strong><br>
+        Current Mileage: ${parseInt(mileage).toLocaleString()} miles
+      `;
+    } else {
+      vehicleInfoDiv.innerHTML = `<p style="color:red">Missing vehicle info in URL.</p>`;
+    }
+
+    const accordionContainer = document.getElementById("accordion-container");
+    const globalConditionSelect = document.getElementById("global-condition");
+
+    // Load local JSON file
+    fetch("camry_2003_maintenance.json")
+      .then(res => res.json())
+      .then(data => {
+        const maintenanceData = data.data.maintenance;
+
+        function renderAccordions(condition) {
+          accordionContainer.innerHTML = "";
+
+          maintenanceData.forEach(entry => {
+            const condData = entry[condition];
+            if (!condData || !condData.service_items || !condData.costs) return;
+
+            const mileageLabel = `${entry.mileage.toLocaleString()} miles`;
+            const isDue = entry.mileage <= parseInt(mileage);
+
+            const completionKey = `${year}-${make}-${model}-${trim}-${entry.mileage}`;
+            const completed = localStorage.getItem(completionKey) === "true";
+
+            const detail = document.createElement("details");
+            const summary = document.createElement("summary");
+            summary.innerHTML = `${mileageLabel} ${isDue ? `<span class="due-indicator">${completed ? "✅" : "❓"}</span>` : ''}`;
+
+            const tasks = condData.service_items.map(item => `<li>${item}</li>`).join("");
+            const costs = condData.costs;
+
+            const taskDiv = document.createElement("div");
+
+            const statusBtn = document.createElement("button");
+            statusBtn.textContent = completed ? "✅ Completed" : "❓ Has this been completed?";
+            statusBtn.style.margin = "0.5rem 0";
+            statusBtn.style.cursor = "pointer";
+
+            statusBtn.addEventListener("click", () => {
+              const nowCompleted = statusBtn.textContent.startsWith("❓");
+              statusBtn.textContent = nowCompleted ? "✅ Completed" : "❓ Has this been completed?";
+              localStorage.setItem(completionKey, nowCompleted);
+              renderAccordions(condition); // Refresh to update the summary icon
+            });
+
+            taskDiv.innerHTML = `
+              <p><strong>Estimated Cost:</strong> $${costs.low} – $${costs.high} (Avg: $${costs.average})</p>
+              <ul>${tasks}</ul>
+            `;
+
+            if (isDue) {
+              taskDiv.appendChild(statusBtn);
+            }
+
+            detail.appendChild(summary);
+            detail.appendChild(taskDiv);
+            accordionContainer.appendChild(detail);
+          });
+
+          if (accordionContainer.innerHTML === "") {
+            accordionContainer.innerHTML = `<p style='color:red'>No maintenance data available for <strong>${condition}</strong> driving conditions.</p>`;
+          }
+        }
+
+        if (parseInt(mileage) > 60000) {
+          globalConditionSelect.value = "severe";
+        }
+
+        renderAccordions(globalConditionSelect.value);
+
+        globalConditionSelect.addEventListener("change", () => {
+          renderAccordions(globalConditionSelect.value);
+        });
+      })
+      .catch(err => {
+        accordionContainer.innerHTML = "<p style='color:red'>Failed to load maintenance data.</p>";
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>

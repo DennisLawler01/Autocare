@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Trim & Mileage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .trim-option {
+      margin: 0.5rem 0;
+    }
+    .mileage-input {
+      margin-top: 1.5rem;
+    }
+    .submit-btn {
+      margin-top: 1.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Your Trim</h1>
+
+  <form id="trimForm">
+    <div id="trimOptions">
+      <!-- Trims will be inserted here -->
+    </div>
+
+    <div class="mileage-input">
+      <label for="mileage">Current Mileage:</label><br>
+      <input type="number" id="mileage" name="mileage" placeholder="e.g., 45000" required />
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <script>
+    // Example API response (replace this with your actual fetch call)
+    const trimsFromAPI = [
+      "Base",
+      "Sport",
+      "EX-L",
+      "Touring",
+      "Limited Edition"
+    ];
+
+    const trimOptionsContainer = document.getElementById("trimOptions");
+
+    // Dynamically generate radio buttons for trims
+    trimsFromAPI.forEach((trim, index) => {
+      const div = document.createElement("div");
+      div.className = "trim-option";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.id = `trim${index}`;
+      input.name = "trim";
+      input.value = trim;
+      input.required = true;
+
+      const label = document.createElement("label");
+      label.htmlFor = input.id;
+      label.textContent = trim;
+
+      div.appendChild(input);
+      div.appendChild(label);
+      trimOptionsContainer.appendChild(div);
+    });
+
+    // Handle form submission
+    document.getElementById("trimForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const selectedTrim = document.querySelector('input[name="trim"]:checked').value;
+      const mileage = document.getElementById("mileage").value;
+
+      // You can send this to your backend/API
+      console.log("Selected Trim:", selectedTrim);
+      console.log("Mileage:", mileage);
+
+      // Example payload
+      const payload = {
+        trim: selectedTrim,
+        mileage: parseInt(mileage, 10)
+      };
+
+      // Example: POST to your API
+      /*
+      fetch("/your-api-endpoint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      }).then(response => response.json())
+        .then(data => {
+          console.log("Server response:", data);
+        });
+      */
+    });
+  </script>
+</body>
+</html>

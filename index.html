@@ -1,49 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AutoCare - Home</title>
-    <link rel="stylesheet" href="src/assets/css/style.css" />
-    <link rel="stylesheet" href="src/assets/css/index.css" />    
-  </head>
-  <body>
-
-    
-  <!-- Placeholder for Navbar -->
-  <div id="nav-placeholder"></div>
-
-  <!-- Navbar Loads -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("nav.html")
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Failed to load navbar");
-          }
-          return response.text();
-        })
-        .then(data => {
-          document.getElementById("nav-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading navbar:", error));
-    });
-  </script>
-
-    <header class="hero">
-      <div class="hero-content">
-        <h2>Welcome to AutoCare</h2>
-        <p>Track your vehicle's fuel stops, maintenance, and expenses in one place.</p>
-        <a href="vehicles.html" class="btn">Get Started</a>
-      </div>
-    </header>
-
-    <script>
-      fetch("nav.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("nav-placeholder").innerHTML = data;
-        });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; URL='pages/home/home.html'" />
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting to <a href="pages/home/home.html">Home</a>...</p>
+</body>
 </html>
