@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let vehicleData = {};
   let vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
 
-  // Load JSON
   fetch("../../YearsMakesModels.json")
     .then(response => response.json())
     .then(data => {
+      console.log("Loaded vehicle data:", data);
       vehicleData = data;
       populateYears();
     })
@@ -28,35 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
       yearSelect.appendChild(option);
     });
   }
-
-  addVehicleBtn.addEventListener("click", () => {
-    const year = yearSelect.value;
-    const make = makeSelect.value;
-    const model = modelSelect.value;
-    const trim = trimInput.value.trim();
-    const mileage = mileageInput.value.trim();
-
-    if (!year || !make || !model || !trim || !mileage) {
-      alert("Please fill out all vehicle details.");
-      return;
-    }
-
-    const timestamp = new Date().toLocaleString();
-    const newVehicle = { year, make, model, trim, mileage, timestamp };
-
-    vehicles.push(newVehicle);
-    localStorage.setItem("vehicles", JSON.stringify(vehicles));
-
-    location.reload();
-
-    yearSelect.value = "";
-    makeSelect.innerHTML = "";
-    modelSelect.innerHTML = '<option value="">Select a Make First</option>';
-    trimInput.value = "";
-    mileageInput.value = "";
-    makeSelect.disabled = true;
-    modelSelect.disabled = true;
-  });
 
   makeSelect.disabled = true;
   modelSelect.disabled = true;
@@ -86,7 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
     modelSelect.innerHTML = '<option value="">Select Model</option>';
     modelSelect.disabled = true;
 
-    if (selectedYear && selectedMake) {
+    if (
+      selectedYear &&
+      selectedMake &&
+      vehicleData[selectedYear] &&
+      Array.isArray(vehicleData[selectedYear][selectedMake])
+    ) {
       const models = vehicleData[selectedYear][selectedMake];
       models.forEach(model => {
         const option = document.createElement("option");
@@ -98,7 +74,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  addVehicleBtn.addEventListener("click", () => {
+    const year = yearSelect.value;
+    const make = makeSelect.value;
+    const model = modelSelect.value;
+    const trim = trimInput ? trimInput.value.trim() : "";
+    const mileage = mileageInput.value.trim();
+
+    if (!year || !make || !model || !trim || !mileage) {
+      alert("Please fill out all vehicle details.");
+      return;
+    }
+
+    const timestamp = new Date().toLocaleString();
+    const newVehicle = { year, make, model, trim, mileage, timestamp };
+
+    vehicles.push(newVehicle);
+    localStorage.setItem("vehicles", JSON.stringify(vehicles));
+
+    location.reload();
+  });
+
   function renderVehicles() {
+    if (!vehicleContainer) return;
+
     vehicleContainer.innerHTML = "";
     vehicles.forEach((vehicle, index) => {
       const card = document.createElement("div");
@@ -160,5 +159,5 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = `../fuel/fuel.html?${query}`;
   }
 
-  if (vehicleContainer) renderVehicles();
+  renderVehicles();
 });
