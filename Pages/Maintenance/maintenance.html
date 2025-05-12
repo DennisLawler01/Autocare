@@ -52,8 +52,7 @@
       const goButton = document.getElementById("go-button");
   
       const vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
-  
-      // Populate dropdown with mileage included
+
       vehicles.forEach((vehicle, index) => {
         const option = document.createElement("option");
         option.value = index;
@@ -79,7 +78,6 @@
           mileage: vehicle.mileage
         }).toString();
   
-        // ✅ Redirect to new page with vehicle info in query string
         window.location.href = `my-vehicles-mt.html?${query}`;
       });
     });

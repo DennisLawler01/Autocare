@@ -1,0 +1,986 @@
+{
+  "status": "success",
+  "data": {
+    "year": "2003",
+    "make": "Toyota",
+    "model": "Camry",
+    "trim": "LE V6 4 Speed Auto 4dr Sedan Automatic",
+    "currency": "USD",
+    "maintenance": [
+      {
+        "mileage": 5000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 7500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 10000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 15000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect exhaust pipes and mountings",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 196,
+            "low": 117,
+            "average": 157
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 193,
+            "low": 116,
+            "average": 155
+          }
+        }
+      },
+      {
+        "mileage": 20000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 22500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 25000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 30000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 360,
+            "low": 291,
+            "average": 325
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 360,
+            "low": 290,
+            "average": 325
+          }
+        }
+      },
+      {
+        "mileage": 35000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 37500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 40000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 75,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 45000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect exhaust pipes and mountings",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 195,
+            "low": 118,
+            "average": 156
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 192,
+            "low": 115,
+            "average": 154
+          }
+        }
+      },
+      {
+        "mileage": 50000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 75,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 52500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 55000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 60000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace automatic transmission fluid",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine valve clearance",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 644,
+            "low": 478,
+            "average": 561
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine valve clearance",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 362,
+            "low": 290,
+            "average": 326
+          }
+        }
+      },
+      {
+        "mileage": 65000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 67500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 70000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 75,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 75000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect exhaust pipes and mountings",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 195,
+            "low": 118,
+            "average": 156
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 192,
+            "low": 115,
+            "average": 154
+          }
+        }
+      },
+      {
+        "mileage": 80000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 75,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 82500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 85000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 90000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 360,
+            "low": 291,
+            "average": 325
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 360,
+            "low": 290,
+            "average": 325
+          }
+        }
+      },
+      {
+        "mileage": 95000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 74,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 97500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 100000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 75,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 105000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect exhaust pipes and mountings",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 195,
+            "low": 118,
+            "average": 156
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect exhaust pipes and mountings",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 192,
+            "low": 115,
+            "average": 154
+          }
+        }
+      },
+      {
+        "mileage": 110000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 75,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 112500,
+        "conditions": [
+          "normal"
+        ],
+        "severe": "",
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires"
+          ],
+          "costs": {
+            "high": 79,
+            "low": 56,
+            "average": 67
+          }
+        }
+      },
+      {
+        "mileage": 115000,
+        "conditions": [
+          "severe"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Inspect ball joints and dust covers",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 75,
+            "low": 56,
+            "average": 65
+          }
+        },
+        "normal": ""
+      },
+      {
+        "mileage": 120000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace automatic transmission fluid",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Replace spark plugs",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine valve clearance",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect nuts and bolts on chassis and body",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 755,
+            "low": 580,
+            "average": 667
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace engine coolant",
+            "Replace spark plugs",
+            "Inspect automatic transmission fluid",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect brake linings/drums and brake pads/discs",
+            "Inspect differential oil",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine valve clearance",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots"
+          ],
+          "costs": {
+            "high": 484,
+            "low": 382,
+            "average": 433
+          }
+        }
+      }
+    ]
+  }
+}

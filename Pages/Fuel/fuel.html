@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AutoCare - Fuel Log</title>
   <link rel="stylesheet" href="../../src/assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -36,13 +37,15 @@
       padding: 1rem;
       border-radius: 6px;
     }
+    #chart-container {
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
 
   <!-- Navbar Placeholder -->
   <div id="nav-placeholder"></div>
-
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       fetch("../nav.html")
@@ -54,11 +57,9 @@
     });
   </script>
 
-  <!-- Fuel Log Header -->
   <h2>⛽ Log a Fuel Stop</h2>
   <div id="vehicle-info"></div>
 
-  <!-- Fuel Stop Input Form -->
   <form id="fuel-form">
     <label for="date">Date:</label>
     <input type="date" id="date" required>
@@ -77,24 +78,116 @@
 
   <ul id="fuel-list"></ul>
 
+  <div id="chart-container">
+    <h2>📊 Fuel Efficiency & Cost</h2>
+    <canvas id="fuelChart" width="600" height="300"></canvas>
+    <p id="average-mpg" style="margin-top:1rem; font-weight:bold;"></p>
+  </div>
+
   <script>
-    // Show vehicle info in header from URL
     const params = new URLSearchParams(window.location.search);
     const year = params.get("year");
     const make = params.get("make");
     const model = params.get("model");
     const trim = params.get("trim");
+    const vehicleKey = `${year}_${make}_${model}_${trim}`;
 
-    const vehicleInfoDiv = document.getElementById("vehicle-info");
-    if (year && make && model && trim) {
-      vehicleInfoDiv.innerHTML = `<p><strong>Vehicle:</strong> ${year} ${make} ${model} (${trim})</p>`;
-    } else {
-      vehicleInfoDiv.innerHTML = `<p style="color: red">Vehicle not selected. Please return to the dashboard and select a vehicle.</p>`;
-      document.getElementById("fuel-form").style.display = "none";
-    }
+    const fuelStops = JSON.parse(localStorage.getItem(`fuelStops_${vehicleKey}`) || "[]")
+      .filter(e => e.mpg !== null && !isNaN(e.mpg))
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    const labels = fuelStops.map(e => e.date);
+    const mpgData = fuelStops.map(e => e.mpg);
+    const costData = fuelStops.map(e => e.cost);
+
+    const avgMpg = mpgData.length ? (mpgData.reduce((a, b) => a + b, 0) / mpgData.length).toFixed(2) : 'N/A';
+    document.getElementById("average-mpg").textContent = `Average MPG: ${avgMpg}`;
+
+    const ctx = document.getElementById("fuelChart").getContext("2d");
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'MPG',
+            data: mpgData,
+            borderColor: '#007bff',
+            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+            pointBackgroundColor: '#007bff',
+            tension: 0.3,
+            yAxisID: 'y1'
+          },
+          {
+            label: 'Cost ($)',
+            data: costData,
+            borderColor: '#28a745',
+            backgroundColor: 'rgba(40, 167, 69, 0.1)',
+            pointBackgroundColor: '#28a745',
+            tension: 0.3,
+            yAxisID: 'y2'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
+        stacked: false,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Fuel Efficiency (MPG) and Cost Over Time',
+            font: {
+              size: 18
+            }
+          },
+          tooltip: {
+            enabled: true
+          },
+          legend: {
+            position: 'bottom'
+          }
+        },
+        scales: {
+          y1: {
+            type: 'linear',
+            position: 'left',
+            title: {
+              display: true,
+              text: 'MPG'
+            },
+            grid: {
+              drawOnChartArea: false
+            }
+          },
+          y2: {
+            type: 'linear',
+            position: 'right',
+            title: {
+              display: true,
+              text: 'Cost ($)'
+            },
+            ticks: {
+              callback: value => `$${value}`
+            },
+            grid: {
+              drawOnChartArea: false
+            }
+          }
+        }
+      }
+    });
+
+    document.getElementById("vehicle-info").innerHTML =
+      year && make && model && trim
+        ? `<p><strong>Vehicle:</strong> ${year} ${make} ${model} (${trim})</p>`
+        : `<p style="color: red">Vehicle not selected. Please return to dashboard.</p>`;
   </script>
 
-  <!-- Load fuel.js -->
+
   <script src="../../src/assets/js/fuel.js"></script>
 
 </body>

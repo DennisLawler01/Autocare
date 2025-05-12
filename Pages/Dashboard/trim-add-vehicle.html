@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select Trim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    select, input, button {
+      display: block;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚙 Choose Trim & Add Mileage</h1>
+
+  <p id="vehicle-summary"></p>
+
+  <label for="trim-select">Trim:</label>
+  <select id="trim-select">
+    <option value="">Select Trim</option>
+    <option value="LE">LE</option>
+    <option value="SE">SE</option>
+    <option value="XLE">XLE</option> <!-- Test option -->
+  </select>
+
+  <label for="mileage-input">Mileage:</label>
+  <input type="number" id="mileage-input" placeholder="Enter current mileage" />
+
+  <button id="save-btn" disabled>Save Vehicle</button>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const year = params.get("year");
+    const make = params.get("make");
+    const model = params.get("model");
+
+    const summary = document.getElementById("vehicle-summary");
+    const trimSelect = document.getElementById("trim-select");
+    const mileageInput = document.getElementById("mileage-input");
+    const saveBtn = document.getElementById("save-btn");
+
+    summary.innerText = `${year} ${make} ${model}`;
+
+    fetch(`https://api.vehicledatabases.com/vehicle-maintenance/options/v3/trim/${year}/${make}/${model}`, {
+      headers: { "x-AuthKey": "YOUR_API_KEY_HERE" }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const trims = data?.data?.trims || [];
+      trims.forEach(trim => {
+        const opt = document.createElement("option");
+        opt.value = trim;
+        opt.textContent = trim;
+        trimSelect.appendChild(opt);
+      });
+    })
+    .catch(err => {
+      console.error("Failed to load trims", err);
+      trimSelect.innerHTML += `<option value="">Error loading trims</option>`;
+    });
+
+    // Enable save when a trim is selected
+    trimSelect.addEventListener("change", () => {
+      saveBtn.disabled = !trimSelect.value;
+    });
+
+    saveBtn.addEventListener("click", () => {
+      const trim = trimSelect.value;
+      const mileage = parseInt(mileageInput.value);
+
+      if (!trim || isNaN(mileage) || mileage < 0) {
+        alert("Please select a trim and enter valid mileage.");
+        return;
+      }
+
+      const vehicle = { year, make, model, trim, mileage };
+
+      // Save to localStorage
+      const vehicles = JSON.parse(localStorage.getItem("vehicles") || "[]");
+      vehicles.push(vehicle);
+      localStorage.setItem("vehicles", JSON.stringify(vehicles));
+
+      // Redirect with all info
+      const query = new URLSearchParams(vehicle).toString();
+      window.location.href = "dashboard.html?" + query + "&added=1";
+    });
+  </script>
+
+</body>
+</html>

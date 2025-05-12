@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Vehicle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    label, select, input, button {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    select, button {
+      padding: 0.5rem;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚗 Add a New Vehicle</h1>
+
+  <label for="year">Year:</label>
+  <select id="year">
+    <option value="">Select Year</option>
+  </select>
+
+  <label for="make">Make:</label>
+  <select id="make" disabled>
+    <option value="">Select Make</option>
+  </select>
+
+  <label for="model">Model:</label>
+  <select id="model" disabled>
+    <option value="">Select Model</option>
+  </select>
+
+  <button id="next-btn" disabled>Next</button>
+
+
+  <script src="../../src/assets/js/vehicle.js"></script>
+
+  <script>
+    const yearSelect = document.getElementById("year");
+    const makeSelect = document.getElementById("make");
+    const modelSelect = document.getElementById("model");
+    const nextBtn = document.getElementById("next-btn");
+
+
+    yearSelect.addEventListener("change", checkReady);
+    makeSelect.addEventListener("change", checkReady);
+    modelSelect.addEventListener("change", checkReady);
+
+    function checkReady() {
+      nextBtn.disabled = !(yearSelect.value && makeSelect.value && modelSelect.value);
+    }
+
+    nextBtn.addEventListener("click", () => {
+      const year = yearSelect.value;
+      const make = makeSelect.value;
+      const model = modelSelect.value;
+
+      const query = new URLSearchParams({ year, make, model }).toString();
+      window.location.href = `trim-add-vehicle.html?${query}`;
+    });
+  </script>
+
+</body>
+</html>

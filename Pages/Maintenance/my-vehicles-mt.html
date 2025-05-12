@@ -66,7 +66,6 @@
         document.getElementById("nav-placeholder").innerHTML = data;
       });
 
-    // Get vehicle info from query params
     const params = new URLSearchParams(window.location.search);
     const year = params.get("year");
     const make = params.get("make");
@@ -87,7 +86,6 @@
     const accordionContainer = document.getElementById("accordion-container");
     const globalConditionSelect = document.getElementById("global-condition");
 
-    // Load local JSON file
     fetch("camry_2003_maintenance.json")
       .then(res => res.json())
       .then(data => {
@@ -124,7 +122,7 @@
               const nowCompleted = statusBtn.textContent.startsWith("❓");
               statusBtn.textContent = nowCompleted ? "✅ Completed" : "❓ Has this been completed?";
               localStorage.setItem(completionKey, nowCompleted);
-              renderAccordions(condition); // Refresh to update the summary icon
+              renderAccordions(condition); 
             });
 
             taskDiv.innerHTML = `

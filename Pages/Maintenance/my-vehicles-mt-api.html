@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance Schedule (Local JSON)</title>
+  <link rel="stylesheet" href="../../src/assets/css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    .info-box {
+      background: #f4f4f4;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    .due-indicator {
+      font-size: 1.1rem;
+      margin-left: 0.5rem;
+      color: orange;
+    }
+    details {
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0.5rem;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    select {
+      margin-top: 0.5rem;
+      padding: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <div id="nav-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("../nav.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("nav-placeholder").innerHTML = html;
+        })
+        .catch(err => console.error("Failed to load navbar:", err));
+    });
+  </script>
+
+  <h1>📋 Maintenance Schedule</h1>
+
+  <div class="info-box" id="vehicle-info"></div>
+
+  <label for="condition-select"><strong>Driving Condition:</strong></label>
+  <select id="condition-select">
+    <option value="normal">Normal</option>
+    <option value="severe">Severe</option>
+  </select>
+
+  <div id="maintenance-container"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const year = params.get("year");
+    const make = params.get("make");
+    const model = params.get("model");
+    const trim = params.get("trim");
+    const mileage = parseInt(params.get("mileage")) || 0;
+
+    const vehicleInfo = document.getElementById("vehicle-info");
+    const container = document.getElementById("maintenance-container");
+    const conditionSelect = document.getElementById("condition-select");
+
+    vehicleInfo.innerHTML = `
+      <strong>${year} ${make} ${model}${trim ? ` (${trim})` : ''}</strong><br>
+      Current Mileage: ${mileage.toLocaleString()} miles
+    `;
+
+    let maintenanceData = [];
+
+    fetch("./camry_2003_maintenance.json")
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to load local JSON");
+        return res.json();
+      })
+      .then(data => {
+        maintenanceData = data.data?.maintenance || [];
+        displayMaintenance(conditionSelect.value);
+      })
+      .catch(err => {
+        console.error("Local JSON error:", err);
+        container.innerHTML = `
+          <p style="color:red">⚠ Failed to load maintenance data. Please ensure the JSON file is in the correct folder.</p>
+        `;
+      });
+
+    conditionSelect.addEventListener("change", () => {
+      displayMaintenance(conditionSelect.value);
+    });
+
+    function displayMaintenance(condition) {
+      container.innerHTML = "";
+
+      if (!maintenanceData.length) {
+        container.innerHTML = "<p>No maintenance data available for this vehicle.</p>";
+        return;
+      }
+
+      maintenanceData.forEach(entry => {
+        const condData = entry[condition];
+        if (!condData) return;
+
+        const isDue = entry.mileage <= mileage;
+        const completionKey = `${year}-${make}-${model}-${trim}-${entry.mileage}-${condition}`;
+        const completed = localStorage.getItem(completionKey) === "true";
+
+        const detail = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.innerHTML = `${entry.mileage.toLocaleString()} miles ${isDue ? `<span class="due-indicator">${completed ? "✅" : "❓"}</span>` : ''}`;
+
+        const cost = condData.costs;
+        const tasks = condData.service_items.map(item => `<li>${item}</li>`).join("");
+
+        const content = document.createElement("div");
+        content.innerHTML = `
+          <p><strong>Cost:</strong> $${cost.low} - $${cost.high} (Avg: $${cost.average})</p>
+          <ul>${tasks}</ul>
+        `;
+
+        const button = document.createElement("button");
+        button.textContent = completed ? "✅ Completed" : "❓ Mark as Completed";
+        button.onclick = () => {
+          const newStatus = !completed;
+          localStorage.setItem(completionKey, newStatus);
+          button.textContent = newStatus ? "✅ Completed" : "❓ Mark as Completed";
+          summary.innerHTML = `${entry.mileage.toLocaleString()} miles <span class="due-indicator">${newStatus ? "✅" : "❓"}</span>`;
+        };
+
+        if (isDue) content.appendChild(button);
+
+        detail.appendChild(summary);
+        detail.appendChild(content);
+        container.appendChild(detail);
+      });
+    }
+  </script>
+
+</body>
+</html>

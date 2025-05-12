@@ -29,7 +29,7 @@
 
   <form id="trimForm">
     <div id="trimOptions">
-      <!-- Trims will be inserted here -->
+      
     </div>
 
     <div class="mileage-input">
@@ -41,7 +41,6 @@
   </form>
 
   <script>
-    // Example API response (replace this with your actual fetch call)
     const trimsFromAPI = [
       "Base",
       "Sport",
@@ -52,7 +51,6 @@
 
     const trimOptionsContainer = document.getElementById("trimOptions");
 
-    // Dynamically generate radio buttons for trims
     trimsFromAPI.forEach((trim, index) => {
       const div = document.createElement("div");
       div.className = "trim-option";
@@ -73,35 +71,18 @@
       trimOptionsContainer.appendChild(div);
     });
 
-    // Handle form submission
     document.getElementById("trimForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const selectedTrim = document.querySelector('input[name="trim"]:checked').value;
       const mileage = document.getElementById("mileage").value;
 
-      // You can send this to your backend/API
       console.log("Selected Trim:", selectedTrim);
       console.log("Mileage:", mileage);
 
-      // Example payload
       const payload = {
         trim: selectedTrim,
         mileage: parseInt(mileage, 10)
       };
-
-      // Example: POST to your API
-      /*
-      fetch("/your-api-endpoint", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      }).then(response => response.json())
-        .then(data => {
-          console.log("Server response:", data);
-        });
-      */
     });
   </script>
 </body>

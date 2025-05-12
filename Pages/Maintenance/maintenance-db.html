@@ -12,9 +12,17 @@
     }
     .section {
       margin-bottom: 2rem;
+    }
+    details {
       background: #f4f4f4;
       padding: 1rem;
       border-radius: 6px;
+    }
+    summary {
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
     }
     label {
       display: block;
@@ -55,48 +63,67 @@
     <p><strong>Vehicle:</strong> <span id="vehicle-display"></span></p>
     <button id="schedule-btn">View Maintenance Schedule</button>
   </div>
+<button onclick="window.location.href='email-settings.html'">📧 Add Email Notifications</button>
+
 
   <div class="section">
-    <h2>Tire Change</h2>
-    <label for="tire-date">Date of Change:</label>
-    <input type="date" id="tire-date" />
-    <label for="tire-notes">Notes:</label>
-    <input type="text" id="tire-notes" placeholder="e.g., Replaced front tires only" />
-    <button onclick="logEvent('tire')">Log Tire Change</button>
-    <ul id="tire-log"></ul>
+    <details>
+      <summary>🚗 Tire Changes</summary>
+      <label for="tire-date">Date of Change:</label>
+      <input type="date" id="tire-date" />
+      <label for="tire-notes">Notes:</label>
+      <input type="text" id="tire-notes" placeholder="e.g., Replaced front tires only" />
+      <button onclick="logEvent('tire')">Log Tire Change</button>
+      <ul id="tire-log"></ul>
+    </details>
   </div>
 
   <div class="section">
-    <h2>Battery Change</h2>
-    <label for="battery-date">Date of Change:</label>
-    <input type="date" id="battery-date" />
-    <label for="battery-notes">Notes:</label>
-    <input type="text" id="battery-notes" placeholder="e.g., Installed new battery from AutoZone" />
-    <button onclick="logEvent('battery')">Log Battery Change</button>
-    <ul id="battery-log"></ul>
+    <details>
+      <summary>🔋 Battery Changes</summary>
+      <label for="battery-date">Date of Change:</label>
+      <input type="date" id="battery-date" />
+      <label for="battery-notes">Notes:</label>
+      <input type="text" id="battery-notes" placeholder="e.g., Installed new battery from AutoZone" />
+      <button onclick="logEvent('battery')">Log Battery Change</button>
+      <ul id="battery-log"></ul>
+    </details>
   </div>
 
+
+  
   <div class="section">
-    <h2>Wiper Change</h2>
-    <label for="wiper-date">Date of Change:</label>
-    <input type="date" id="wiper-date" />
-    <label for="wiper-notes">Notes:</label>
-    <input type="text" id="wiper-notes" placeholder="e.g., Rear wiper only" />
-    <button onclick="logEvent('wiper')">Log Wiper Change</button>
-    <ul id="wiper-log"></ul>
+    <details>
+      <summary>💧 Wiper Changes</summary>
+      <label for="wiper-date">Date of Change:</label>
+      <input type="date" id="wiper-date" />
+      <label for="wiper-notes">Notes:</label>
+      <input type="text" id="wiper-notes" placeholder="e.g., Rear wiper only" />
+      <button onclick="logEvent('wiper')">Log Wiper Change</button>
+      <ul id="wiper-log"></ul>
+    </details>
   </div>
 
   <script>
-    // Render log history
+    const params = new URLSearchParams(window.location.search);
+    const year = params.get("year");
+    const make = params.get("make");
+    const model = params.get("model");
+    const trim = params.get("trim");
+    const mileage = params.get("mileage");
+
+    const vehicleKey = `${year}-${make}-${model}-${trim}`;
+
     const logs = {
-      tire: JSON.parse(localStorage.getItem("tireLog")) || [],
-      battery: JSON.parse(localStorage.getItem("batteryLog")) || [],
-      wiper: JSON.parse(localStorage.getItem("wiperLog")) || []
+      tire: JSON.parse(localStorage.getItem(`tireLog-${vehicleKey}`)) || [],
+      battery: JSON.parse(localStorage.getItem(`batteryLog-${vehicleKey}`)) || [],
+      wiper: JSON.parse(localStorage.getItem(`wiperLog-${vehicleKey}`)) || []
     };
 
     function renderLogs(type) {
       const logList = document.getElementById(`${type}-log`);
       logList.innerHTML = "";
+
       logs[type].forEach(entry => {
         const li = document.createElement("li");
         li.textContent = `${entry.date}: ${entry.notes}`;
@@ -110,7 +137,7 @@
       if (!date || !notes) return alert("Please fill out both fields.");
 
       logs[type].push({ date, notes });
-      localStorage.setItem(`${type}Log`, JSON.stringify(logs[type]));
+      localStorage.setItem(`${type}Log-${vehicleKey}`, JSON.stringify(logs[type]));
       renderLogs(type);
       document.getElementById(`${type}-date`).value = "";
       document.getElementById(`${type}-notes`).value = "";
@@ -118,18 +145,12 @@
 
     ['tire', 'battery', 'wiper'].forEach(renderLogs);
 
-    // Display vehicle info and pass query to next page
-    const params = new URLSearchParams(window.location.search);
-    const year = params.get("year");
-    const make = params.get("make");
-    const model = params.get("model");
-    const trim = params.get("trim");
-    const mileage = params.get("mileage");
+    document.getElementById("vehicle-display").textContent =
+      `${year} ${make} ${model} (${trim}) - ${mileage} miles`;
 
-    document.getElementById("vehicle-display").textContent = `${year} ${make} ${model} (${trim}) - ${mileage} miles`;
     document.getElementById("schedule-btn").addEventListener("click", () => {
       const query = params.toString();
-      window.location.href = `my-vehicles-mt.html?${query}`;
+      window.location.href = `my-vehicles-mt-api.html?${query}`;
     });
   </script>
 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Setup Email Notifications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+    }
+    input, select, button {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    #status {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav bar container -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Load navbar from ../nav.html -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("../nav.html")
+        .then(response => {
+          if (!response.ok) throw new Error("Failed to load navbar");
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById("nav-placeholder").innerHTML = html;
+        })
+        .catch(error => console.error("Error loading navbar:", error));
+    });
+  </script>
+
+  <h1>📧 Email Notification Setup</h1>
+
+  <form id="email-form">
+    <label for="email">Your Email</label>
+    <input type="email" id="email" required placeholder="you@example.com" />
+
+    <label for="vehicle">Select Vehicle</label>
+    <select id="vehicle" required>
+      <option value="">-- Select a Vehicle --</option>
+    </select>
+
+    <button type="submit">Send Maintenance Emails</button>
+  </form>
+
+  <div id="status"></div>
+
+  <script>
+    const vehicles = JSON.parse(localStorage.getItem("vehicles") || "[]");
+    const vehicleSelect = document.getElementById("vehicle");
+
+    vehicles.forEach((v, index) => {
+      const option = document.createElement("option");
+      option.value = index;
+      option.textContent = `${v.year} ${v.make} ${v.model} (${v.trim})`;
+      vehicleSelect.appendChild(option);
+    });
+
+    document.getElementById("email-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const vehicleIndex = vehicleSelect.value;
+
+      if (!email || vehicleIndex === "") {
+        alert("Please provide an email and select a vehicle.");
+        return;
+      }
+
+      const vehicle = vehicles[vehicleIndex];
+
+      const tasks = [
+        "Replace engine oil and oil filter",
+        "Rotate tires",
+        "Inspect brake pads"
+      ];
+
+      fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          vehicle,
+          tasks
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("status").textContent = "✅ Email sent!";
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("status").textContent = "❌ Failed to send email.";
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1228 @@
+{
+  "status": "success",
+  "data": {
+    "year": "2021",
+    "make": "Toyota",
+    "model": "Camry",
+    "trim": "TRD V6 4dr Front-Wheel Drive Sedan Automatic",
+    "currency": "USD",
+    "maintenance": [
+      {
+        "mileage": 5000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 69,
+            "average": 82
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 37,
+            "low": 22,
+            "average": 30
+          }
+        }
+      },
+      {
+        "mileage": 10000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 178,
+            "low": 131,
+            "average": 154
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 179,
+            "low": 133,
+            "average": 156
+          }
+        }
+      },
+      {
+        "mileage": 15000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 69,
+            "average": 82
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 37,
+            "low": 22,
+            "average": 30
+          }
+        }
+      },
+      {
+        "mileage": 20000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 178,
+            "low": 131,
+            "average": 154
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 179,
+            "low": 133,
+            "average": 156
+          }
+        }
+      },
+      {
+        "mileage": 25000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 69,
+            "average": 82
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 37,
+            "low": 22,
+            "average": 30
+          }
+        }
+      },
+      {
+        "mileage": 30000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 234,
+            "low": 176,
+            "average": 205
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 249,
+            "low": 185,
+            "average": 217
+          }
+        }
+      },
+      {
+        "mileage": 35000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 32,
+            "low": 19,
+            "average": 26
+          }
+        }
+      },
+      {
+        "mileage": 40000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 131,
+            "average": 157
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 133,
+            "average": 158
+          }
+        }
+      },
+      {
+        "mileage": 45000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 32,
+            "low": 19,
+            "average": 26
+          }
+        }
+      },
+      {
+        "mileage": 50000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 131,
+            "average": 157
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 133,
+            "average": 158
+          }
+        }
+      },
+      {
+        "mileage": 55000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 32,
+            "low": 19,
+            "average": 26
+          }
+        }
+      },
+      {
+        "mileage": 60000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace automatic transmission fluid",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace spark plugs",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 776,
+            "low": 607,
+            "average": 691
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace spark plugs",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 562,
+            "low": 455,
+            "average": 508
+          }
+        }
+      },
+      {
+        "mileage": 65000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 32,
+            "low": 19,
+            "average": 26
+          }
+        }
+      },
+      {
+        "mileage": 70000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 131,
+            "average": 157
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 133,
+            "average": 158
+          }
+        }
+      },
+      {
+        "mileage": 75000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 32,
+            "low": 19,
+            "average": 26
+          }
+        }
+      },
+      {
+        "mileage": 80000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 131,
+            "average": 157
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 184,
+            "low": 133,
+            "average": 158
+          }
+        }
+      },
+      {
+        "mileage": 85000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 32,
+            "low": 19,
+            "average": 26
+          }
+        }
+      },
+      {
+        "mileage": 90000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 234,
+            "low": 176,
+            "average": 205
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 249,
+            "low": 185,
+            "average": 217
+          }
+        }
+      },
+      {
+        "mileage": 95000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 32,
+            "low": 19,
+            "average": 26
+          }
+        }
+      },
+      {
+        "mileage": 100000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine coolant",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 393,
+            "low": 305,
+            "average": 349
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine coolant",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 398,
+            "low": 307,
+            "average": 352
+          }
+        }
+      },
+      {
+        "mileage": 105000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 31,
+            "low": 20,
+            "average": 25
+          }
+        }
+      },
+      {
+        "mileage": 110000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 131,
+            "average": 157
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 183,
+            "low": 133,
+            "average": 158
+          }
+        }
+      },
+      {
+        "mileage": 115000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect drive shaft boots",
+            "Inspect engine air filter",
+            "Inspect steering linkage and boots",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 96,
+            "low": 74,
+            "average": 85
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Rotate tires",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect wiper blades",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 31,
+            "low": 20,
+            "average": 25
+          }
+        }
+      },
+      {
+        "mileage": 120000,
+        "conditions": [
+          "severe",
+          "normal"
+        ],
+        "severe": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace automatic transmission fluid",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace spark plugs",
+            "Replace vacuum pump for brake booster",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Tighten nuts and bolts on chassis and body",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 1610,
+            "low": 1285,
+            "average": 1447
+          }
+        },
+        "normal": {
+          "service_items": [
+            "Replace engine oil and oil filter",
+            "Rotate tires",
+            "Replace cabin air filter",
+            "Replace engine air filter",
+            "Replace spark plugs",
+            "Replace vacuum pump for brake booster",
+            "Check installation of driver's floor mat",
+            "Inspect and adjust all fluid levels",
+            "Inspect ball joints and dust covers",
+            "Inspect brake lines and hoses",
+            "Inspect drive belts",
+            "Inspect drive shaft boots",
+            "Inspect engine coolant",
+            "Inspect exhaust pipes and mountings",
+            "Inspect fuel lines and connections, fuel tank band and fuel tank vapor vent system hoses",
+            "Inspect fuel tank cap gasket",
+            "Inspect radiator and condenser",
+            "Inspect steering gear box",
+            "Inspect steering linkage and boots",
+            "Inspect transmission for signs of leakage",
+            "Inspect transmission for signs of leakage",
+            "Inspect wiper blades",
+            "Reset oil replacement reminder light if equipped",
+            "Visually inspect brake linings/drums and brake pads/discs"
+          ],
+          "costs": {
+            "high": 1357,
+            "low": 1095,
+            "average": 1226
+          }
+        }
+      }
+    ]
+  }
+}
